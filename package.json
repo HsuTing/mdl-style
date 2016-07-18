@@ -1,6 +1,6 @@
 {
   "name": "mdl-style",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Material Design Lite for radium. Just style. Not component.",
   "main": "./index.js",
   "scripts": {

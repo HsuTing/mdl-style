@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
 	html: {
 		color: 'rgba(0,0,0, 0.87)',
 		fontSize: '1em',
