@@ -1,10 +1,10 @@
 {
   "name": "mdl-style",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Material Design Lite for radium. Just style. Not component.",
-  "main": "./lib/index.js",
+  "main": "./index.js",
   "scripts": {
-    "build": "rm -rf ./lib && babel --presets es2015 -w --stage 0 src --out-dir lib"
+    "render": "css-to-radium < ./node_modules/material-design-lite/material.css > index.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,8 @@
     "url": "https://github.com/HsuTing/mdl-style/issues"
   },
   "homepage": "https://github.com/HsuTing/mdl-style#readme",
-  "dependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-preset-es2015": "^6.9.0"
+  "devDependencies": {
+    "css-to-radium": "^1.0.3",
+    "material-design-lite": "^1.1.3"
   }
 }
