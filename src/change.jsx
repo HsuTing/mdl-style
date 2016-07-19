@@ -90,7 +90,7 @@ const rename = (newClassName, oldClassName) => {
 
 for(let i = 1; i <= 12; i++) {
   const base = '.mdl-cell--' + i + '-col-';
-  ['phone', 'tablet'].map((label) => {
+  ['phone', 'tablet', 'desktop'].map((label) => {
     const className = base + label;
     rename(className, className+className);
     rename('.mdl-grid--no-spacing>'+className, '.mdl-grid--no-spacing>'+className+className)
