@@ -81,6 +81,39 @@ Object.keys(tempOutput).map((key) => {
   });
 });
 
+
+// rename 
+const rename = (newClassName, oldClassName) => {
+  output[ newClassName ] = output[ oldClassName ]; 
+  delete output[ oldClassName ];
+};
+
+for(let i = 1; i <= 12; i++) {
+  const base = '.mdl-cell--' + i + '-col-';
+  ['phone', 'tablet'].map((label) => {
+    const className = base + label;
+    rename(className, className+className);
+    rename('.mdl-grid--no-spacing>'+className, '.mdl-grid--no-spacing>'+className+className)
+  });
+}
+
+// special
+// .mdl-grid.mdl-grid--no-spacing
+delete output['.mdl-grid.mdl-grid--no-spacing'];
+output['.mdl-grid--no-spacing'] = Merge({}, output['.mdl-grid'], {
+  '@media (max-width:479px)': {
+    padding: '0'
+  },
+  '@media (min-width:480px) and (max-width:839px)': {
+    padding: '0'
+  },
+  '@media (min-width:840px)': {
+    padding: '0'
+  }
+});
+
+
+// output
 Object.keys(output).map((key) => {
   console.log(key);
 });
